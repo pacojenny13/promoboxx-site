@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PromoBoxx – Dein smarter KI-Service</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f7f7f7;
+      color: #333;
+    }
+    header {
+      background: #6c63ff;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    main {
+      padding: 20px;
+    }
+    #chatbot {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: white;
+      border: 1px solid #ddd;
+      padding: 15px;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+      width: 300px;
+      max-height: 400px;
+      overflow-y: auto;
+    }
+    #chat {
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+    input {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #aaa;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Willkommen bei PromoBoxx</h1>
+    <p>Automatisierte Antworten, Bewertungen & Social Media Betreuung</p>
+  </header>
+
+  <main>
+    <h2>Was wir bieten:</h2>
+    <ul>
+      <li>Antworten auf Google-Bewertungen mit KI</li>
+      <li>Instagram & Facebook-Kommentare automatisch beantworten</li>
+      <li>Designs, Flyer & Posts mit KI generieren</li>
+      <li>Monatliches Abo für lokale Läden & Restaurants</li>
+    </ul>
+    <p>Jetzt starten: WhatsApp <strong>0157 33883901</strong></p>
+  </main>
+
+  <div id="chatbot">
+    <div id="chat">Hallo! Wie kann ich dir helfen?</div>
+    <input type="text" placeholder="Schreibe eine Frage..." onkeydown="simulateResponse(event)" />
+  </div>
+
+  <script>
+    function simulateResponse(event) {
+      if (event.key === "Enter") {
+        const input = event.target;
+        const userMessage = input.value.trim();
+        if (!userMessage) return;
+
+        const chat = document.getElementById("chat");
+        chat.innerHTML += `<div><strong>Du:</strong> ${userMessage}</div>`;
+
+        // Simulierter KI-Response (Demo)
+        const response = "Unsere KI antwortet automatisch auf Bewertungen & Social-Media-Kommentare. Mehr Infos? Schreib uns bei WhatsApp!";
+        chat.innerHTML += `<div><strong>PromoBoxx:</strong> ${response}</div><br/>`;
+
+        input.value = "";
+        chat.scrollTop = chat.scrollHeight;
+      }
+    }
+  </script>
+</body>
+</html>
