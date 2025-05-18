@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ö<!DOCTYPE html>
 <html lang="de">
 <head>
 <h1 style="font-family: 'Rubik', sans-serif; font-size: 36px; color: #6c63ff;">
@@ -84,10 +84,8 @@
   </main>
 
   <div id="chatbot">
-    <div id="chat">Hallo! Wie kann ich dir helfen?</div>
-    <input type="text" placeholder="Schreibe eine Frage..." onkeydown="simulateResponse(event)" />
-  </div>
-
+    
+    
   <script>
     function simulateResponse(event) {
       if (event.key === "Enter") {
@@ -95,18 +93,11 @@
         const userMessage = input.value.trim();
         if (!userMessage) return;
 
-        const chat = document.getElementById("chat");
-        chat.innerHTML += `<div><strong>Du:</strong> ${userMessage}</div>`;
+        c
 
         // Simulierter KI-Response (Demo)
         const response = "Unsere KI antwortet automatisch auf Bewertungen & Social-Media-Kommentare. Mehr Infos? Schreib uns bei WhatsApp!";
         chat.innerHTML += `<div><strong>PromoBoxx:</strong> ${response}</div><br/>`;
-
-        input.value = "";
-        chat.scrollTop = chat.scrollHeight;
-      }
-    }
-  </script>
 </body> <!-- Chatbot Icon Button -->
 <div id="chatbot-toggle" onclick="toggleChatbot()">
   💬
