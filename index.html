@@ -1,96 +1,187 @@
-ö<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="de">
 <head>
-<h1 style="font-family: 'Rubik', sans-serif; font-size: 36px; color: #6c63ff;">
-  <span style="display: inline-flex; align-items: center;">
-    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#25D366" viewBox="0 0 16 16" style="margin-right: 8px;">
-      <path d="M8 0a8 8 0 1 0 4.906 14.32L16 16l-1.68-3.094A8 8 0 0 0 8 0zm0 1.5a6.5 6.5 0 0 1 5.197 10.39l-.25.36.4.73-1.06-.28-.36.25A6.5 6.5 0 1 1 8 1.5z"/>
-    </svg>
-    PromoBoxx
-  </span>
-</h1>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PromoBoxx – Dein smarter KI-Service</title>
-  <style> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PromoBoxx</title>
+
+  <style>
     body {
-      font-family: sans-serif;
+      font-family: 'Arial', sans-serif;
       margin: 0;
       padding: 0;
-      background: #f7f7f7;
-      color: #333;
+      background: #f9f9f9;
     }
+
     header {
       background: #6c63ff;
       color: white;
-      padding: 20px;
       text-align: center;
+      padding: 40px 20px;
     }
-    main {
-      padding: 20px;
+
+    header h1 {
+      margin: 0;
+      font-size: 36px;
     }
-    #chatbot {
+
+    header p {
+      margin-top: 10px;
+      font-size: 18px;
+    }
+
+    .whatsapp-btn {
       position: fixed;
       bottom: 20px;
       right: 20px;
+      background-color: #25D366;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      z-index: 999;
+    }
+
+    #chatbot-toggle {
+      position: fixed;
+      bottom: 90px;
+      right: 20px;
+      background: #6c63ff;
+      color: white;
+      font-size: 24px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      z-index: 1000;
+    }
+
+    #chatbot-box {
+      display: none;
+      position: fixed;
+      bottom: 160px;
+      right: 20px;
       background: white;
-      border: 1px solid #ddd;
-      padding: 15px;
+      border: 1px solid #ccc;
       border-radius: 12px;
-      box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+      padding: 12px;
       width: 300px;
       max-height: 400px;
       overflow-y: auto;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      z-index: 999;
     }
-    #chat {
-      font-size: 14px;
-      margin-bottom: 10px;
-    }
-    input {
+
+    #chatbot-box input {
       width: 100%;
       padding: 8px;
-      border: 1px solid #aaa;
+      margin-top: 10px;
       border-radius: 6px;
+      border: 1px solid #aaa;
+      font-size: 14px;
     }
   </style>
 </head>
+
 <body>
+
+  <!-- Header mit stylischem Textlogo -->
   <header>
-    <h1>Willkommen bei PromoBoxx</h1>
-    <p>Automatisierte Antworten, Bewertungen & Social Media Betreuung</p>
+    <h1>
+      <span style="background:#fff; color:#6c63ff; padding:8px 16px; border-radius:12px; letter-spacing:1px; box-shadow:0 2px 6px rgba(0,0,0,0.2);">
+        Promo<span style="color:#25D366;">Boxx</span>
+      </span>
+    </h1>
+    <p>Dein smarter KI-Service für Bewertungen, Social Media & mehr</p>
   </header>
 
+  <!-- Leistungsboxen -->
   <main>
-    <h2>Was wir bieten:</h2>
-    <ul>
-      <li>Antworten auf Google-Bewertungen mit KI</li>
-      <li>Instagram & Facebook-Kommentare automatisch beantworten</li>
-      <li>Designs, Flyer & Posts mit KI generieren</li>
-      <li>Monatliches Abo für lokale Läden & Restaurants</li>
-    </ul>
-    <p>Jetzt direkt Kontakt aufnehmen:</p>
-<a href="https://wa.me/4915733883901" target="_blank" style="
-  display: inline-block;
-  background-color: #25D366;
-  color: white;
-  padding: 12px 20px;
-  font-size: 16px;
-  border-radius: 8px;
-  text-decoration: none;
-  margin-top: 20px;
-">
-  WhatsApp schreiben
-</a>
+    <h2 style="text-align:center; margin-bottom: 30px;">Unsere Leistungen</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; padding: 10px;">
+
+      <div style="background:white; border-radius:16px; padding:20px; box-shadow:0 4px 10px rgba(0,0,0,0.1);">
+        <h3>KI für Google-Bewertungen</h3>
+        <p>Wir beantworten automatisch deine Google-Bewertungen mit natürlicher KI – freundlich, schnell, professionell.</p>
+      </div>
+
+      <div style="background:white; border-radius:16px; padding:20px; box-shadow:0 4px 10px rgba(0,0,0,0.1);">
+        <h3>Instagram & Facebook</h3>
+        <p>Unsere KI reagiert auf Kommentare unter deinen Posts – so bleibt deine Seite aktiv und nahbar.</p>
+      </div>
+
+      <div style="background:white; border-radius:16px; padding:20px; box-shadow:0 4px 10px rgba(0,0,0,0.1);">
+        <h3>PDF-Flyer jeden Monat</h3>
+        <p>Du bekommst monatlich einen gestalteten Aktionsflyer als PDF – perfekt für WhatsApp, Social Media & Druck.</p>
+      </div>
+
+      <div style="background:white; border-radius:16px; padding:20px; box-shadow:0 4px 10px rgba(0,0,0,0.1);">
+        <h3>Monatlicher Report</h3>
+        <p>Wir schicken dir eine Analyse deiner Bewertungen, Kommentare & Kundeninteraktionen – übersichtlich als PDF.</p>
+      </div>
+
+      <div style="background:white; border-radius:16px; padding:20px; box-shadow:0 4px 10px rgba(0,0,0,0.1);">
+        <h3>WhatsApp-Kundendienst</h3>
+        <p>Dein Business ist direkt erreichbar per WhatsApp – auf Wunsch mit vorgefertigten Auto-Antworten.</p>
+      </div>
+
+      <div style="background:white; border-radius:16px; padding:20px; box-shadow:0 4px 10px rgba(0,0,0,0.1);">
+        <h3>Chatbot auf deiner Webseite</h3>
+        <p>Ein schlauer, kleiner Chatbot auf deiner Seite beantwortet Kundenfragen 24/7 – individuell anpassbar.</p>
+      </div>
+
+      <div style="background:white; border-radius:16px; padding:20px; box-shadow:0 4px 10px rgba(0,0,0,0.1);">
+        <h3>Social Media Planung (Add-on)</h3>
+        <p>Optional erstellen wir für dich wöchentliche Posts & Stories – du musst nur noch posten oder freigeben.</p>
+      </div>
+
+    </div>
   </main>
 
-</body> <!-- Chatbot Icon Button -->
-<div id="chatbot-toggle" onclick="toggleChatbot()">
-  💬
-</div>
+  <!-- WhatsApp Button -->
+  <a class="whatsapp-btn" href="https://wa.me/4915733883901" target="_blank">
+    WhatsApp schreiben
+  </a>
 
-<!-- Chatbot Fenster -->
-<div id="chatbot-box">
-  <div id="chat">Hallo! Wie kann ich dir helfen?</div>
-  <input type="text" placeholder="Schreib was..." onkeydown="simulateResponse(event)" />
-</div>
-</html>  
+  <!-- Chatbot Toggle Button -->
+  <div id="chatbot-toggle" onclick="toggleChatbot()">💬</div>
+
+  <!-- Chatbot Box -->
+  <div id="chatbot-box">
+    <div id="chat">Hallo! Wie kann ich dir helfen?</div>
+    <input type="text" placeholder="Schreib was..." onkeydown="simulateResponse(event)" />
+  </div>
+
+  <!-- JavaScript für Chatbot -->
+  <script>
+    function toggleChatbot() {
+      const box = document.getElementById("chatbot-box");
+      box.style.display = box.style.display === "block" ? "none" : "block";
+    }
+
+    function simulateResponse(event) {
+      if (event.key === "Enter") {
+        const input = event.target;
+        const userMessage = input.value.trim();
+        if (!userMessage) return;
+
+        const chat = document.getElementById("chat");
+        chat.innerHTML += `<div><strong>Du:</strong> ${userMessage}</div>`;
+
+        const response = "Unsere KI antwortet automatisch auf Bewertungen & Social Media Kommentare. Mehr Infos? Schreib uns bei WhatsApp!";
+        chat.innerHTML += `<div><strong>PromoBoxx:</strong> ${response}</div><br/>`;
+
+        input.value = "";
+        chat.scrollTop = chat.scrollHeight;
+      }
+    }
+  </script>
+
+</body>
+</html>
