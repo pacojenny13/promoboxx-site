@@ -12,7 +12,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PromoBoxx – Dein smarter KI-Service</title>
-  <style>
+  <style> 
     body {
       font-family: sans-serif;
       margin: 0;
@@ -107,5 +107,14 @@
       }
     }
   </script>
-</body>
+</body> <!-- Chatbot Icon Button -->
+<div id="chatbot-toggle" onclick="toggleChatbot()">
+  💬
+</div>
+
+<!-- Chatbot Fenster -->
+<div id="chatbot-box">
+  <div id="chat">Hallo! Wie kann ich dir helfen?</div>
+  <input type="text" placeholder="Schreib was..." onkeydown="simulateResponse(event)" />
+</div>
 </html>
